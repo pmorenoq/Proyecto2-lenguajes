@@ -44,7 +44,9 @@ public class Busqueda {
 				
 				System.out.println(columna11);
 				System.out.println(columna12);
-						
+				
+                System.out.print(menu.combinada(columna11, columna12));
+
 			} catch (FileNotFoundException e) {
 					e.printStackTrace();
 					
@@ -62,19 +64,21 @@ public class Busqueda {
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
 				
-				ArrayList<String> columna11 = new ArrayList();
-				ArrayList<String> columna12 = new ArrayList();	
+				ArrayList<String> columna21 = new ArrayList();
+				ArrayList<String> columna22 = new ArrayList();	
 				
 				while(obj.hasNextLine() && obj2.hasNextLine()) {
 //					System.out.println(obj.nextLine());
 //					System.out.println(obj2.nextLine());
 					
-					columna11.add(obj.nextLine());
-					columna12.add(obj2.nextLine());	
+					columna21.add(obj.nextLine());
+					columna22.add(obj2.nextLine());	
 				}
 				
-				System.out.println(columna11);
-				System.out.println(columna12);
+				System.out.println(columna21);
+				System.out.println(columna22);
+
+                System.out.print(menu.combinada(columna21, columna22));
 						
 			} catch (FileNotFoundException e) {
 					e.printStackTrace();
@@ -93,19 +97,21 @@ public class Busqueda {
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
 				
-				ArrayList<String> columna11 = new ArrayList();
-				ArrayList<String> columna12 = new ArrayList();	
+				ArrayList<String> columna31 = new ArrayList();
+				ArrayList<String> columna32 = new ArrayList();	
 				
 				while(obj.hasNextLine() && obj2.hasNextLine()) {
 //					System.out.println(obj.nextLine());
 //					System.out.println(obj2.nextLine());
 					
-					columna11.add(obj.nextLine());
-					columna12.add(obj2.nextLine());	
+					columna31.add(obj.nextLine());
+					columna32.add(obj2.nextLine());	
 				}
 				
-				System.out.println(columna11);
-				System.out.println(columna12);
+				System.out.println(columna31);
+				System.out.println(columna32);
+
+                System.out.print(menu.combinada(columna31, columna32));
 						
 			} catch (FileNotFoundException e) {
 					e.printStackTrace();
