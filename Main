@@ -32,8 +32,7 @@ public class Main {
 				System.exit(0);
 			}
 		
-		switch (opcion){
-			
+		switch (opcion){	
 		case 1:{
 			try {
 				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion1\\columna11.txt");
@@ -46,8 +45,8 @@ public class Main {
 				ArrayList<String> columna12 = new ArrayList();	
 				
 				while(obj.hasNextLine() && obj2.hasNextLine()) {
-					// System.out.println(obj.nextLine());
-					// System.out.println(obj2.nextLine());
+//					System.out.println(obj.nextLine());
+//					System.out.println(obj2.nextLine());
 					
 					columna11.add(obj.nextLine());
 					columna12.add(obj2.nextLine());	
@@ -60,16 +59,71 @@ public class Main {
 					e.printStackTrace();
 					
 			}
-		  }
+			
+			break;
+			
+		}
 		
 		case 2:{
+			try {
+				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna21.txt");
+				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna22.txt");
+				
+				Scanner obj = new Scanner(doc);
+				Scanner obj2 = new Scanner(doc2);
+				
+				ArrayList<String> columna11 = new ArrayList();
+				ArrayList<String> columna12 = new ArrayList();	
+				
+				while(obj.hasNextLine() && obj2.hasNextLine()) {
+//					System.out.println(obj.nextLine());
+//					System.out.println(obj2.nextLine());
+					
+					columna11.add(obj.nextLine());
+					columna12.add(obj2.nextLine());	
+				}
+				
+				System.out.println(columna11);
+				System.out.println(columna12);
+						
+			} catch (FileNotFoundException e) {
+					e.printStackTrace();
+					
+			}
+
+			break;
 			
-		  }
+		}
 		
 		case 3:{
+			try {
+				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna31.txt");
+				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna32.txt");
+				
+				Scanner obj = new Scanner(doc);
+				Scanner obj2 = new Scanner(doc2);
+				
+				ArrayList<String> columna11 = new ArrayList();
+				ArrayList<String> columna12 = new ArrayList();	
+				
+				while(obj.hasNextLine() && obj2.hasNextLine()) {
+//					System.out.println(obj.nextLine());
+//					System.out.println(obj2.nextLine());
+					
+					columna11.add(obj.nextLine());
+					columna12.add(obj2.nextLine());	
+				}
+				
+				System.out.println(columna11);
+				System.out.println(columna12);
+						
+			} catch (FileNotFoundException e) {
+					e.printStackTrace();
+					
+			}
+
+			break;
 			
-		  }
-		
 		}
 		
 		
@@ -77,4 +131,4 @@ public class Main {
 		
 	}
 
-
+}
