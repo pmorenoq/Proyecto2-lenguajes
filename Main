@@ -1,29 +1,17 @@
-package proyectoLenguajes;
+import java.io.*;
+import java.util.*;
 
-import java.io.PrintStream;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 //java 11
-public class Main {
+public class Busqueda {
 	
 //	zona para declarar las funciones de primer orden
 		
-	
 	public static void main(String[] args) {
 		
-	
 //		interfaz principal
-		System.out.println("Por favor indique que desea hacer");
-		System.out.println("1. 3 Eventos durante una fecha");
-		System.out.println("2. 5 datos asociados a una palabra cualquera");
-		System.out.println("3. 5 datos asociados a cualquier busqueda");
+        App menu = new App();
+        menu.interfaz();
 	
 //		declarar Scanner
 		Scanner sc = new Scanner(System.in);
@@ -37,8 +25,8 @@ public class Main {
 		switch (opcion){	
 		case 1:{
 			try {
-				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion1\\columna11.txt");
-				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion1\\columna12.txt");
+				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna11.txt");
+				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna12.txt");
 				
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
@@ -68,8 +56,8 @@ public class Main {
 		
 		case 2:{
 			try {
-				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna21.txt");
-				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna22.txt");
+				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna21.txt");
+				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna22.txt");
 				
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
@@ -99,8 +87,8 @@ public class Main {
 		
 		case 3:{
 			try {
-				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna31.txt");
-				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna32.txt");
+				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna31.txt");
+				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna32.txt");
 				
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
@@ -133,4 +121,4 @@ public class Main {
 		
 	}
 
-} 
+}
