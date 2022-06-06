@@ -1,32 +1,208 @@
-import java.io.*;
-import java.util.*;
+package proyectoLenguajes;
 
+import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.stream.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 //java 11
-public class Busqueda {
+public class Main {
 	
 //	zona para declarar las funciones de primer orden
-		
-	public static void main(String[] args) {
-		
-//		interfaz principal
-        App menu = new App();
-        menu.interfaz();
 	
-//		declarar Scanner
+	//mostrar los datos que se piden
+	static Integer addList(List<String> list, List<String> list2, int i){
+			
+		System.out.println(list.get(i) + "\n" + list2.get(i));
+		
+		return i;
+	}
+	
+	//busqueda 1
+	static Integer optionSelect1(int i) {
+		
+		if (i == 1998) {
+			i=0;
+			
+		}else if(i == 1999) {
+			i=3;
+			
+		}else if(i == 2000) {
+			i=6;
+			
+		}else if(i == 2001) {
+			i=9;
+			
+		}else if(i == 2004) {
+			i=12;
+			
+		}else if(i == 2005) {
+			i=15;
+			
+		}else {
+			System.out.println("digite una fecha valida");
+			System.exit(0);
+		}
+		
+		return i;
+	}
+	
+	//busqueda 2
+	static int optionSelect2(String i) {
+		
+		int n = 0;
+		i.toUpperCase();
+		
+		if (i == "PERROS") {
+			n = 0;
+			return n;
+		}else if(i == "GATOS") {
+			n = 5;
+			return n;
+		}else if(i == "COMIDA") {
+			n = 10;
+			return n;
+		}else if(i == "ONU") {
+			n = 15;
+			return n;
+		}else {
+			System.out.println("digite una busqueda valida");
+			System.exit(0);
+		}
+		
+		return n;
+	}
+	
+	//busqueda 3
+	static int optionSelect3(String i) {
+		
+		int n = 0;
+		i.toUpperCase();
+		
+		if (i == "como tratar la gripa") {
+			n = 0;
+			return n;
+		}else if(i == "mejores tips para cuidar  los dientes") {
+			n = 5;
+			return n;
+		}else if(i == "a quien llamo cuando veo un delito") {
+			n = 10;
+			return n;
+		}else {
+			System.out.println("digite una busqueda valida");
+			System.exit(0);
+		}
+		
+		return n;
+	}
+	
+	public static void main(String[] args) {		
+	
+//		interfaz principal
+		System.out.println("Por favor indique que desea hacer");
+		System.out.println("1. 3 Eventos durante una fecha");
+		System.out.println("2. 5 datos asociados a una palabra cualquera");
+		System.out.println("3. 5 datos asociados a cualquier busqueda");
+	
+//		declarar Scanner		
 		Scanner sc = new Scanner(System.in);
 		int opcion = sc.nextInt();
 		
+//		confirma si la opcion es correcta
 			if(opcion < 1 || opcion > 3) {
 				System.out.println("Digite una opcion correcta");
 				System.exit(0);
 			}
-		
+			
+			
 		switch (opcion){	
+		//años
 		case 1:{
 			try {
-				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna11.txt");
-				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna12.txt");
+				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion1\\columna11.txt");
+				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion1\\columna12.txt");
+				
+				Scanner obj = new Scanner(doc);
+				Scanner obj2 = new Scanner(doc2);
+				
+				ArrayList<String> columna11 = new ArrayList();
+				ArrayList<String> columna12 = new ArrayList();	
+				
+				while(obj.hasNextLine() && obj2.hasNextLine()) {					
+					columna11.add(obj.nextLine());
+					columna12.add(obj2.nextLine());	
+				}
+				
+//				System.out.println(columna11);
+//				System.out.println(columna12);
+				
+				//funciones para seleccionar la opcion deseada
+				System.out.println("digite un año para ver datos sobre el mismo");
+				int n = sc.nextInt();
+				int i = optionSelect1(n);
+				
+				addList(columna11, columna12, i);
+				addList(columna11, columna12, i+1);
+				addList(columna11, columna12, i+2);
+						
+			} catch (FileNotFoundException e) {
+					e.printStackTrace();		
+			}
+			
+			break;
+			
+		}
+		
+		case 2:{
+			//busqueda cualquiera
+			try {
+				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna21.txt");
+				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion2\\columna22.txt");
+				
+				Scanner obj = new Scanner(doc);
+				Scanner obj2 = new Scanner(doc2);
+				
+				List<String> columna11 = new ArrayList();
+				List<String> columna12 = new ArrayList();	
+				
+					while(obj.hasNextLine() && obj2.hasNextLine()) {
+						columna11.add(obj.nextLine());
+						columna12.add(obj2.nextLine());	
+					}
+				
+//				System.out.println(columna11);
+//				System.out.println(columna12);
+				
+				//funciones para seleccionar la opcion deseada
+				System.out.println("realice una busqueda:");
+				String n = sc.next();
+				int i = optionSelect2(n);
+				
+				addList(columna11, columna12, i);
+				addList(columna11, columna12, i+1);
+				addList(columna11, columna12, i+2);
+				addList(columna11, columna12, i+3);
+				addList(columna11, columna12, i+4);
+						
+			} catch (FileNotFoundException e) {
+					e.printStackTrace();
+					
+			}
+
+			break;
+			
+		}
+		// busqueda cualquiera (incluyendo espacios)
+		case 3:{
+			try {
+				File doc = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna31.txt");
+				File doc2 = new File("C:\\Users\\pamor\\my-app\\src\\lenguajes de programacion\\Entrega 2 - archivos\\opcion3\\columna32.txt");
 				
 				Scanner obj = new Scanner(doc);
 				Scanner obj2 = new Scanner(doc2);
@@ -35,50 +211,23 @@ public class Busqueda {
 				ArrayList<String> columna12 = new ArrayList();	
 				
 				while(obj.hasNextLine() && obj2.hasNextLine()) {
-//					System.out.println(obj.nextLine());
-//					System.out.println(obj2.nextLine());
 					
 					columna11.add(obj.nextLine());
 					columna12.add(obj2.nextLine());	
 				}
 				
-				System.out.println(columna11);
-				System.out.println(columna12);
+//				System.out.println(columna11);
+//				System.out.println(columna12);
 				
-                System.out.print(menu.combinada(columna11, columna12));
-
-			} catch (FileNotFoundException e) {
-					e.printStackTrace();
-					
-			}
-			
-			break;
-			
-		}
-		
-		case 2:{
-			try {
-				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna21.txt");
-				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna22.txt");
+				System.out.println("realice una busqueda:");
+				String n = sc.next();
+				int i = optionSelect3(n);
 				
-				Scanner obj = new Scanner(doc);
-				Scanner obj2 = new Scanner(doc2);
-				
-				ArrayList<String> columna21 = new ArrayList();
-				ArrayList<String> columna22 = new ArrayList();	
-				
-				while(obj.hasNextLine() && obj2.hasNextLine()) {
-//					System.out.println(obj.nextLine());
-//					System.out.println(obj2.nextLine());
-					
-					columna21.add(obj.nextLine());
-					columna22.add(obj2.nextLine());	
-				}
-				
-				System.out.println(columna21);
-				System.out.println(columna22);
-
-                System.out.print(menu.combinada(columna21, columna22));
+				addList(columna11, columna12, i);
+				addList(columna11, columna12, i+1);
+				addList(columna11, columna12, i+2);
+				addList(columna11, columna12, i+3);
+				addList(columna11, columna12, i+4);
 						
 			} catch (FileNotFoundException e) {
 					e.printStackTrace();
@@ -88,43 +237,11 @@ public class Busqueda {
 			break;
 			
 		}
-		
-		case 3:{
-			try {
-				File doc = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna31.txt");
-				File doc2 = new File("C:\\Users\\siimo\\OneDrive\\Documents\\Programming\\Java\\app1\\app1\\src\\columna32.txt");
-				
-				Scanner obj = new Scanner(doc);
-				Scanner obj2 = new Scanner(doc2);
-				
-				ArrayList<String> columna31 = new ArrayList();
-				ArrayList<String> columna32 = new ArrayList();	
-				
-				while(obj.hasNextLine() && obj2.hasNextLine()) {
-//					System.out.println(obj.nextLine());
-//					System.out.println(obj2.nextLine());
-					
-					columna31.add(obj.nextLine());
-					columna32.add(obj2.nextLine());	
-				}
-				
-				System.out.println(columna31);
-				System.out.println(columna32);
-
-                System.out.print(menu.combinada(columna31, columna32));
-						
-			} catch (FileNotFoundException e) {
-					e.printStackTrace();
-					
-			}
-
-			break;
-			
-		}
-		
 		
 		}
 		
 	}
-
+		
 }
+
+
